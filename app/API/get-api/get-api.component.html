@@ -1,0 +1,82 @@
+<p>Get API</p>
+<div class="row">
+  <div class="col-3">
+   <button (click)="getUsers()" class="btn btn-success">
+    Get Users
+   </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of userList; track $index) {
+          <tr>
+            <td>{{$index+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.website}}</td>
+          </tr>
+         }
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <button (click)="getProductsList()"   class="btn btn-success">
+      Get Products List
+    </button>
+  </div>
+</div>
+<!-- This is to display product list in table format -->
+<!-- <div class="row">
+  <div class="col-6">
+    <table class="table table-bordered"  >
+      <thead>
+        <tr>
+          <th>S.NO</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Discount</th>
+          <th>Category</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+   @for (item of productsList; track $index) {
+    <tr>
+      <td>{{$index+1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.discount}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.rating}}</td>
+    </tr>
+   } 
+      </tbody>
+    </table>
+  </div>
+</div> -->
+<!-- This is to display product list in table format -->
+ <!-- This  is display the prosduct list in Dropdown Format -->
+  <div class="col-5">
+    <select>
+      @for (item of  productsList; track $index) {
+        <option value="item.prouct-id">{{item.name}}</option>
+      }
+    </select>
+  </div>
+  

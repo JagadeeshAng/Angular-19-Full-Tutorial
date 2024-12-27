@@ -1,0 +1,32 @@
+<!-- <p>resource-api works!</p> -->
+ <div class="row">
+  <div class="col-3">
+    <!-- If the resource has the value will will get True. -->
+     <!-- hasValue will let you know that do we have the data or not -->
+    {{userList.hasValue()}}
+  </div>
+  <div class="col-3">
+    <ul>
+      <!-- Same thing we used to do with normal HTTP Client, and the same thing we will do with Resource API.  -->
+      @for (item of userList.value(); track $index) {
+        <li>{{item.name}} - {{item.username}}</li>
+      }
+    </ul>
+  </div>
+  <!-- hasValue() will get you like if the user has the Value or not in the resource   -->
+  <!-- Just Like that we will have isLoading() , it will get you like currently this whatever the API call or something is on progress or not. -->
+  <div class="col-3">
+    <!-- By Defalut isLoading(), was true , means when the API Call is Loading it will get true, and when We got the API Response we will get it false. -->
+ {{userList.isLoading()}}
+  </div>
+  <!-- If some error is there  -->
+  <div class="col-3">
+    <!-- Json pipe will convert that object into String Data -->
+{{userList.error()  |json}}
+  </div>
+  <div class="col-3">
+    <!-- Once we click on this button our API Call Should trigger -->
+     <!-- We  can reload a resource  -->
+    <button class="btn btn-success" (click)="reloadData()">Reload Data</button>
+  </div>
+ </div>

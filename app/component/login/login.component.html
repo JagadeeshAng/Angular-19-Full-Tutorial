@@ -1,0 +1,26 @@
+<!-- <p>login works!</p> -->
+<main class="main-login">
+  <div class="left-login">
+      <h1>Login<br>And join our team</h1>
+      <img src="https://i.postimg.cc/YC13sX2Z/Astronaut-cuate.png" class="left-login-img" alt="astronaut image">
+  </div>
+
+  <div class="right-login">
+      <div class="card-login">
+          <h1>Login</h1>
+          <div class="textfield">
+              <label for="user">User</label>
+              <!-- <input type="text" [(ngModel)]="loginObject.userName"  name="user" placeholder="User">  This is used for Hard code Login -->
+               <input type="text" [(ngModel)]="apiLoginObj.EmailId" name="user" placeholder="user">
+          </div>
+
+          <div class="textfield">
+              <label for="password">Password</label>
+              <!-- <input type="password" [(ngModel)]="loginObject.password" name="password" placeholder="Password"> This is used for HardCode Login -->
+               <input type="text" [(ngModel)]="apiLoginObj.Password" name="password" placeholder="password">  
+          </div>
+
+          <button class="btn-login" (click)="onLogin()">Login</button>
+      </div>
+  </div>
+</main>

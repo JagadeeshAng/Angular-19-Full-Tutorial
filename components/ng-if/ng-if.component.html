@@ -1,0 +1,30 @@
+<!-- <p>ng-if works!</p> -->
+ <div class="row">
+  <div class="col-3"> 
+    <div class="bg-success p-3" *ngIf="div1Visible"> 
+      Div1 
+    </div>
+  </div>
+  <div class="col-3">
+  <div class="bg-primary p-3" *ngIf="num1 == num2">
+    Div2
+  </div>
+   </div>
+</div>
+<div class="row"> 
+  <div class="col-3 text-center">
+    <button class="btn btn-danger" (click)="hideDiv1()">
+     Hide
+    </button>
+    <button class="btn btn-success mx-3" (click)= "showDiv()">
+     Show
+    </button>
+  </div>
+  <div class="col-3">
+  <input type="text" [(ngModel)]="num1">
+  <input type="text" [(ngModel)]="num2">
+  </div>
+  <div class="col-2">
+    {{num1 == num2}}
+  </div>
+</div>

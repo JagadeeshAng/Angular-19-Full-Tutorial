@@ -1,0 +1,16 @@
+<!-- <p>tabs works!</p> -->
+ <!-- <div class="btn-group">
+  <button type="button"class="btn btn-primary">Apple
+  </button>
+   <button type="button"class="btn btn-primary">Samsung
+  </button>
+   <button type="button"class="btn btn-primary">Sony
+  </button>
+ </div> -->
+ <!-- This is used for the Output and Input decorators -->
+  <div class="btn-group">
+    @for (item of tabList; track $index) {
+      <!-- onTabChange() => When we are calling this function we need to send the data also.  -->
+      <button type="button"class="btn" [ngClass]="currentTab == item? 'btn-success': 'btn-primary'" (click)="onTabChange(item)">{{item}}</button>
+    }
+  </div>

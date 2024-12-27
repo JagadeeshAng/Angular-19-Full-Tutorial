@@ -1,0 +1,98 @@
+<!-- <p>ng-for works!</p> -->
+ <div class="row p-3">
+  <div class="col-6">
+    <app-progress-bar [progressValue]="55"></app-progress-bar>
+  </div>
+ </div>
+ <div class="row">
+  <div class="col-3">
+    CourseName=> {{courseName}} <br><br>
+    UpperCase:=> {{courseName|uppercase}}
+  </div>
+  <div class="col-3">
+    CourseName=> {{courseName}} <br><br>
+    LowerCase => {{courseName| lowercase}}
+  </div>
+  <div class="col-3">
+    <!-- Here Object we cannot directly print thats wjhy we willl use Json Pipe -->
+    studentObj => {{studentObj}} <br><br>
+    StudentNewObj=> {{studentObj| json}}
+  </div>
+ </div>
+<div class="row">
+  <div class="col-3">
+    <!-- This will display entire data -->
+    CurrentDate: {{currentDate}} <br><br>
+    OnlyDate: {{currentDate| date }}
+  </div>
+  <div class="col-3">
+    CurrentDate: {{currentDate}} <br><br>
+    <!-- dd-MMM-yy This will display 07-Dec-24 -->
+    CurrentDateFormat: {{currentDate | date:'dd-MMM-yy'}}
+  </div>
+  <div class="col-3">
+    CurrentDate: {{currentDate}} <br><br>
+    <!-- dd-MMM-yy This will display 07-Dec-24 -->
+    CurrentDateFormat: {{currentDate | date:'dd-MM-yyyy'}}
+  </div>
+  <div class="row">
+    <div class="col-3">
+      CurrentDate: {{currentDate}} <br><br>
+      <!-- dd-MMM-yy This will display 07-Dec-24 -->
+      CurrentDateFormat: {{currentDate | date:'dd/MM/yyyy'}} <br><br>
+      DateOnly: {{currentDate |  date:'hh-mm-ss'}}
+    </div>
+  </div>
+</div>
+ <div class="row">
+  <div class="col-3">
+    <ul> 
+     <li *ngFor= "let city of cityList">
+      {{city}}
+     </li> 
+    </ul>
+  </div>
+  <div class="col-5">
+    <button *ngFor="let cityName of cityList"  class="btn btn-success  mx-1" >  
+      {{cityName}}
+    </button>
+  </div>
+  <div class="col-3">
+   <div *ngFor="let city of cityList"> 
+    <span>{{city}}</span>
+   </div>
+  </div>
+ </div>
+<div class="row"> 
+  <div class="col-3">
+    <select> 
+      <option *ngFor="let emp of employeeArray" [value]="emp.empid">
+        {{emp.empName}}- {{emp.city }}
+      </option>
+    </select>
+  </div>
+  <div class="col-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr> 
+          <th>S.No:</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Mobile No:</th>
+          <th>Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employeeArray; let srno = index">
+          <td>{{srno+1}}</td>
+          <td>{{employee.empName | na }}</td>
+          <td>{{employee.city | uppercase  }}</td>
+          <td>{{employee.contact}}</td>
+          <td>
+            <app-progress-bar   [progressValue]="employee.attendance"></app-progress-bar>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

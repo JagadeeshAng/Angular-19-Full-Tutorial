@@ -1,0 +1,49 @@
+<!-- <p>data-binding works!</p> -->
+<button class="btn btn-success"(click)="navigateToAdminPage()">Go to Admin</button>
+ <div class="row"> 
+ 
+  <div class="col-6">
+    1. Interpolation
+    <p>First Name: {{firstName }} </p>
+    <!-- <p>Roll No: {{rollNo }} </p> -->
+    <!-- <p>Current Date: {{currentDate }} </p> -->
+     <div>{{rollNo}} </div>
+     <span>{{isActive }}</span>
+     </div> <br><br>
+     <div class="col-6"> 
+      2. Property Binding <br><br>
+      <input type="text" [value] ="firstName"  name="" id=""><br><br>
+      <input type="text"  [placeholder]="myPlaceHolder"  name="" id=""><br><br>
+       <div [class]="divClassName" style="height: 100px;width: 100px;">
+      </div>
+     </div>
+ </div>
+ <div class="row">
+  <div class="col-3">
+    3. Event Binding
+    <button (click)="showWelcomeMessage()"> Show Welcome Text </button>
+       </div><br><br>
+       <div class="col-3">
+        <select (change)="onCityChange()">
+          <option value="Delhi">Delhi</option>
+          <option value="Agra">Agra</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Kolkata">Kolkata </option>
+           </select>
+         </div>
+   </div>
+   <div class="row">
+    <div class="col-3"> 
+      <input type="text"[(ngModel)]="firstName" name="" id="">
+    </div>
+    <div class="coi-3">
+      <select [(ngModel)]="selectedCity"> 
+        <option value="Delhi">Delhi</option>
+          <option value="Agra">Agra</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Kolkata">Kolkata </option>
+      </select>
+      {{"You Have Selected::" +selectedCity}}
+     </div>
+     </div>
+   
